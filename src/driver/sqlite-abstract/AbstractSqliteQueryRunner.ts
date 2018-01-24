@@ -107,7 +107,7 @@ export class AbstractSqliteQueryRunner implements QueryRunner {
             throw new TransactionAlreadyStartedError();
 
         this.isTransactionActive = true;
-        await this.query("BEGIN TRANSACTION");
+        await this.query("BEGIN IMMEDIATE TRANSACTION");
     }
 
     /**
